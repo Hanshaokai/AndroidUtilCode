@@ -5,21 +5,32 @@
 
 ## APIs
 
-* ### 剪贴板相关→[ClipboardUtils.java][clipboard.java]→[Test][clipboard.test]
+
+* ### 剪贴板相关 -> [ClipboardUtils.java][clipboard.java] -> [Test][clipboard.test]
 ```
 copyText  : 复制文本到剪贴板
 getText   : 获取剪贴板的文本
-copyUri   : 复制uri到剪贴板
-getUri    : 获取剪贴板的uri
+copyUri   : 复制 uri 到剪贴板
+getUri    : 获取剪贴板的 uri
 copyIntent: 复制意图到剪贴板
 getIntent : 获取剪贴板的意图
 ```
 
-* ### 定位相关→[LocationUtils.java][location.java]→[Demo][location.demo]
+* ### 坐标转换相关 -> [CoordinateUtils.java][coordinate.java] -> [Test][coordinate.test]
 ```
-isGpsEnabled     : 判断Gps是否可用
+bd09ToGcj02 : BD09 坐标转 GCJ02 坐标
+gcj02ToBd09 : GCJ02 坐标转 BD09 坐标
+gcj02ToWGS84: GCJ02 坐标转 WGS84 坐标
+wgs84ToGcj02: WGS84 坐标转 GCJ02 坐标
+bd09ToWGS84 : BD09 坐标转 WGS84 坐标
+wgs84ToBd09 : WGS84 坐标转 BD09 坐标
+```
+
+* ### 定位相关 -> [LocationUtils.java][location.java] -> [Demo][location.demo]
+```
+isGpsEnabled     : 判断 Gps 是否可用
 isLocationEnabled: 判断定位是否可用
-openGpsSettings  : 打开Gps设置界面
+openGpsSettings  : 打开 Gps 设置界面
 register         : 注册
 unregister       : 注销
 getAddress       : 根据经纬度获取地理位置
@@ -30,7 +41,7 @@ isBetterLocation : 是否更好的位置
 isSameProvider   : 是否相同的提供者
 ```
 
-* ### 拼音相关→[PinyinUtils.java][pinyin.java]→[Demo][pinyin.demo]
+* ### 拼音相关 -> [PinyinUtils.java][pinyin.java] -> [Demo][pinyin.demo]
 ```
 ccs2Pinyin           : 汉字转拼音
 ccs2Pinyin           : 汉字转拼音
@@ -40,33 +51,16 @@ getSurnamePinyin     : 根据名字获取姓氏的拼音
 getSurnameFirstLetter: 根据名字获取姓氏的首字母
 ```
 
-* ### 线程池相关→[ThreadPoolUtils.java][thread_pool.java]
-```
-ThreadPoolUtils       : ThreadPoolUtils构造函数
-execute               : 在未来某个时间执行给定的命令
-execute               : 在未来某个时间执行给定的命令链表
-shutDown              : 待以前提交的任务执行完毕后关闭线程池
-shutDownNow           : 试图停止所有正在执行的活动任务
-isShutDown            : 判断线程池是否已关闭
-isTerminated          : 关闭线程池后判断所有任务是否都已完成
-awaitTermination      : 请求关闭、发生超时或者当前线程中断
-submit                : 提交一个Callable任务用于执行
-submit                : 提交一个Runnable任务用于执行
-invokeAll, invokeAny  : 执行给定的任务
-schedule              : 延迟执行Runnable命令
-schedule              : 延迟执行Callable命令
-scheduleWithFixedRate : 延迟并循环执行命令
-scheduleWithFixedDelay: 延迟并以固定休息时间循环执行命令
-```
-
-[clipboard.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/ClipboardUtils.java
-[clipboard.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/test/java/com/blankj/subutil/util/ClipboardUtilsTest.java
 
 
-[location.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/LocationUtils.java
-[location.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/sub/location/LocationActivity.java
+[clipboard.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/main/java/com/blankj/subutil/util/ClipboardUtils.java
+[clipboard.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/test/java/com/blankj/subutil/util/ClipboardUtilsTest.java
 
-[pinyin.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/PinyinUtils.java
-[pinyin.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/app/src/main/java/com/blankj/androidutilcode/sub/pinyin/PinyinActivity.java
+[coordinate.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/main/java/com/blankj/subutil/util/CoordinateUtils.java
+[coordinate.test]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/test/java/com/blankj/subutil/util/CoordinateUtilsTest.java
 
-[thread_pool.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/src/main/java/com/blankj/subutil/util/ThreadPoolUtils.java
+[location.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/main/java/com/blankj/subutil/util/LocationUtils.java
+[location.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/pkg/src/main/java/com/blankj/subutil/pkg/feature/location/LocationActivity.kt
+
+[pinyin.java]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/lib/src/main/java/com/blankj/subutil/util/PinyinUtils.java
+[pinyin.demo]: https://github.com/Blankj/AndroidUtilCode/blob/master/subutil/pkg/src/main/java/com/blankj/subutil/pkg/feature/pinyin/PinyinActivity.kt
